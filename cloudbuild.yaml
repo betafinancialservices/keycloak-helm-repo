@@ -13,7 +13,7 @@ steps:
 # optionally you can set to add any other Helm chart repository
 # to use charts from
 - name: 'gcr.io/$PROJECT_ID/helm:latest'
-  args: ['upgrade', '--install', 'keycloak/keycloak'
+  args: ['upgrade', '--install', 'keycloak/keycloak']
   env:
   - 'KUBECONFIG=/workspace/.kube/config'
   - 'HELM_REPO_NAME=keycloak'
