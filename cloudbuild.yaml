@@ -1,16 +1,16 @@
 steps:
 
 # Installing the dependency which mentioned in charts.yaml file
-- name: 'gcr.io/$PROJECT_ID/helm:latest'
-  args: ['dependency', 'update']
-  dir: 'helm/'
+#- name: 'gcr.io/$PROJECT_ID/helm:latest'
+#  args: ['dependency', 'update']
+#  dir: 'helm/'
 
 # run helm command to create packages
-- name: 'gcr.io/$PROJECT_ID/helm:latest'
-  args: ['package', 'helm', '-d', 'charts']
+#- name: 'gcr.io/$PROJECT_ID/helm:latest'
+#  args: ['package', 'helm', '-d', 'charts']
 
-- name: 'gcr.io/$PROJECT_ID/helm:latest'
-  args: ['repo', 'index', 'charts']
+#- name: 'gcr.io/$PROJECT_ID/helm:latest'
+#  args: ['repo', 'index', 'charts']
 
 # fetch GKE cluster credentials to be used for helm step
 - name: 'gcr.io/cloud-builders/kubectl'
