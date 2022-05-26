@@ -25,3 +25,5 @@ options:
  logging: CLOUD_LOGGING_ONLY
  pool:
     name: 'projects/$PROJECT_ID/locations/us-central1/workerPools/beta1-dev-workerpool-01'
+ #workerPool:
+ #   'projects/$GOOGLE_CLOUD_PROJECT/locations/us-central1/workerPools/beta1-dev-workerpool-01'
