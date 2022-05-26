@@ -13,13 +13,13 @@ steps:
 # optionally you can set to add any other Helm chart repository
 # to use charts from
 - name: 'gcr.io/$PROJECT_ID/helm:latest'
-  args: ['upgrade', '--install', 'filebeat', '--namespace', 'filebeat', 'stable/filebeat']
+  args: ['upgrade', '--install', 'keycloak/keycloak'
   env:
   - 'KUBECONFIG=/workspace/.kube/config'
-  - 'HELM_REPO_NAME=example'
-  - 'HELM_REPO_URL=http://charts.example.com'
-  - 'TILLERLESS=true'
-  - 'TILLER_NAMESPACE=test'
+  - 'HELM_REPO_NAME=keycloak'
+  - 'HELM_REPO_URL=https://betafinancialservices.github.io/keycloak-helm-repo/charts/'
+  #- 'TILLERLESS=true'
+  #- 'TILLER_NAMESPACE=test'
   
 options:
  logging: CLOUD_LOGGING_ONLY
