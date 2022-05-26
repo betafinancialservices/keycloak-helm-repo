@@ -20,10 +20,13 @@ steps:
   - 'HELM_REPO_URL=https://betafinancialservices.github.io/keycloak-helm-repo/charts/'
   #- 'TILLERLESS=true'
   #- 'TILLER_NAMESPACE=test'
+  options:
+  pool:
+    name: 'projects/$PROJECT_ID/locations/us-central1/workerPools/beta1-dev-workerpool-01'
   
 options:
  logging: CLOUD_LOGGING_ONLY
- pool:
-    name: 'projects/$PROJECT_ID/locations/us-central1/workerPools/beta1-dev-workerpool-01'
+ #pool:
+ #   name: 'projects/$PROJECT_ID/locations/us-central1/workerPools/beta1-dev-workerpool-01'
  #workerPool:
  #   'projects/$GOOGLE_CLOUD_PROJECT/locations/us-central1/workerPools/beta1-dev-workerpool-01'
