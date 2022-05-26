@@ -1,0 +1,101 @@
+apiVersion: v1
+entries:
+  common:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.13.1
+    created: "2022-05-26T14:53:41.123615+05:30"
+    description: A Library Helm Chart for grouping common logic between bitnami charts.
+      This chart is not deployable by itself.
+    digest: 330a278e01fc3f3d4b9a90a8614b1a5ddda007de10bb4ee650710991af415f27
+    home: https://github.com/bitnami/charts/tree/master/bitnami/common
+    icon: https://bitnami.com/downloads/logos/bitnami-mark.png
+    keywords:
+    - common
+    - helper
+    - template
+    - function
+    - bitnami
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: common
+    sources:
+    - https://github.com/bitnami/charts
+    - https://www.bitnami.com/
+    type: library
+    urls:
+    - common-1.14.1.tgz
+    version: 1.14.1
+  keycloak:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 18.0.0
+    created: "2022-05-26T14:53:41.129844+05:30"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Keycloak is a high performance Java-based identity and access management
+      solution. It lets developers add an authentication layer to their applications
+      with minimum effort.
+    digest: b7790c3aa756dcad5664da8b84dbfea4f85e6f169091c6b8a33eec18f2c61ae8
+    home: https://www.keycloak.org
+    icon: https://bitnami.com/assets/stacks/keycloak/img/keycloak-stack-220x234.png
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: keycloak
+    sources:
+    - https://github.com/bitnami/bitnami-docker-keycloak
+    - https://github.com/keycloak/keycloak
+    urls:
+    - keycloak-9.1.0.tgz
+    version: 9.1.0
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 14.3.0
+    created: "2022-05-26T14:53:41.133054+05:30"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 68c1575bd4954f7eb6216ee5b017dc58f2b4ec94b8d19174c5004e3c47c0ec6d
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    - https://www.postgresql.org/
+    urls:
+    - postgresql-11.2.6.tgz
+    version: 11.2.6
+generated: "2022-05-26T14:53:41.12272+05:30"
