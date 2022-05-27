@@ -24,14 +24,30 @@ steps:
 # run helm command to install/upgrade filebeat
 # optionally you can set to add any other Helm chart repository
 # to use charts from
-- name: 'gcr.io/$PROJECT_ID/helm:latest'
-  args: ['upgrade', '--install', 'keycloak/keycloak']
-  env:
-  - 'KUBECONFIG=/workspace/.kube/config'
-  - 'HELM_REPO_NAME=keycloak'
-  - 'HELM_REPO_URL=https://betafinancialservices.github.io/keycloak-helm-repo/charts/'
+#- name: 'gcr.io/$PROJECT_ID/helm:latest'
+#  args: ['upgrade', '--install', 'keycloak/keycloak']
+#  env:
+#  - 'KUBECONFIG=/workspace/.kube/config'
+#  - 'HELM_REPO_NAME=keycloak'
+#  - 'HELM_REPO_URL=https://betafinancialservices.github.io/keycloak-helm-repo/charts/'
   #- 'TILLERLESS=true'
   #- 'TILLER_NAMESPACE=test'
+
+# run helm command to install/upgrade filebeat
+# optionally you can set to add any other Helm chart repository
+# to use charts from
+- name: 'gcr.io/$PROJECT_ID/helm:latest'
+  id: Deploy chart
+  args:
+    - upgrade
+    - -i
+    - keycloak
+    - ./helm
+    - -f
+    - ./helm/values.yaml
+  env:
+    - KUBECONFIG=/workspace/.kube/config
+    #- TILLERLESS=true
   
 options:
  logging: CLOUD_LOGGING_ONLY
